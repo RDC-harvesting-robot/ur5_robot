@@ -44,6 +44,11 @@ roslaunch ur5_description display_with_gripper.launch
 roslaunch ur5_moveit_config demo_gazebo.launch
 ```
 
+#### Pick and place
+```
+rosrun ur5_gazebo pick_and_place.py
+```
+
 (The pkg was created following [detailed tutorial](https://roboticscasual.com/ros-tutorial-how-to-create-a-moveit-config-for-the-ur5-and-a-gripper/#:~:text=Create%20a%20Moveit%20configuration%20package%20with%20the%20Moveit%20Setup%20Assistant.))
 
 **Control ur5 with MotionPlanning Plugin in rviz**
