@@ -79,7 +79,7 @@
   </xacro:macro>
 
 
-  <xacro:macro name="ur5_robot" params="prefix joint_limited">
+  <xacro:macro name="ur5_robot" params="prefix joint_limited enable_d435">
 
     <link name="${prefix}base_link" >
       <visual>
@@ -365,10 +365,11 @@
         <material>Gazebo/White</material>
     </gazebo>
 
-	<xacro:realsense_d435 sensor_name="${prefix}d435" parent_link="${prefix}support" rate="10">
-    <origin rpy="0 0 1.57 " xyz="0 0 0.01"/>
-    </xacro:realsense_d435>
-
+    <xacro:if value="${enable_d435}">
+      <xacro:realsense_d435 sensor_name="${prefix}d435" parent_link="${prefix}support" rate="10">
+        <origin rpy="0 0 1.57 " xyz="0 0 0.01"/>
+      </xacro:realsense_d435>
+    </xacro:if>
 
   </xacro:macro>
 </robot>
